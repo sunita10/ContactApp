@@ -1,0 +1,17 @@
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th ng-repeat='field in fields'>
+            {{field}}
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="contact in contacts">
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+    </tr>
+    </tbody>
+
+
+</table>
