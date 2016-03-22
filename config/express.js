@@ -8,6 +8,8 @@ var express =  require('express'),
 module.exports = function(db) {
     var app = express();
 
+
+
     //Init all Models
     config.getGlobbedFiles('./app/models/**/*.model.js'). forEach(function(modelPath){
         require(path.resolve(modelPath));

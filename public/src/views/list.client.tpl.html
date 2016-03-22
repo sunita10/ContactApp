@@ -1,3 +1,16 @@
+<div class="row">
+    <div class="col-sm-6">
+        <input type="text" ng-model="name" class="form-control" id="filter">
+
+    </div>
+    <div class="col-sm-1">
+        <span class="glyphicon glyphicon-search"></span>
+    </div>
+    <div class="col-sm-2 col-sm-offset-1">
+        <button class="btn btn-success" ng-click="createContact()">Add</button>
+    </div>
+
+</div><br>
 <table class="table table-bordered table-hover">
     <thead>
     <tr>
@@ -7,9 +20,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="contact in contacts">
-        <td>{{contact.firstName}}</td>
+    <tr ng-repeat="contact in contacts | filter:name">
+        <td><a href="#/contact/:{{conatact._id}}">{{contact.firstName}}</a></td>
         <td>{{contact.lastName}}</td>
+        <td>{{contact._id}}</td>
+        <td><button class="btn btn-primary" ng-click="edit_Contact(contact.id)">Edit</button>
+           <button class="btn btn-danger"  ng-click="delete_Contact(contact.id)">Delete</button>
+        </td>
     </tr>
     </tbody>
 

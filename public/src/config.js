@@ -5,6 +5,10 @@ angular.module('ContactsApp')
                    controller: 'ListController',
                    templateUrl: "src/views/list.client.tpl.html"
                })
+               .when('/create', {
+                   controller: 'CreateNewCtrl',
+                   templateUrl: 'src/views/create.client.tpl.html'
+               })
                .when('/', {
                    template:"<h1>Welcome to MEAN Stack Full Application</h1>"
                })

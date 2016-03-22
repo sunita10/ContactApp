@@ -13,3 +13,15 @@ module.exports.getAllContacts = function(req, res){
 
 
 };
+module.exports.create = function(req, res) {
+    console.log(req.body);
+    var contact = new Contact(req.body);
+    contact.save(function(err) {
+        if(err) {
+            return res.status(404).send("Error Found");
+        }
+        else {
+            console.log(contact);
+        }
+    });
+};

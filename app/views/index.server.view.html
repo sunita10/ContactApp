@@ -5,6 +5,7 @@
     <title>Contact List</title>
     {% for cssFile in cssFiles %}
     <link rel="stylesheet" href="{{cssFile}}">
+    {% endfor %}
 </head>
 <body>
 <div class="container">
@@ -12,7 +13,7 @@
         <h1>Contacts</h1>
     </div>
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li><a href="#/">Home</a></li>
