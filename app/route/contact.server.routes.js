@@ -18,6 +18,7 @@ module.exports = function(app) {
         .post(contact.create)
         .put(contact.update);
 
+
     router
         .route('/contact/:id')
         .get(contact.edit)

@@ -52,6 +52,7 @@ module.exports.update = function(req, res) {
     Contact.findById({_id:req.body._id}, function(err, contact) {
         console.log(contact);
         contact.firstName = req.body.firstName;
+        console.log(contact.firstName);
         contact.lastName = req.body.lastName;
         contact.save(function(err) {
             if(err) {
@@ -59,6 +60,7 @@ module.exports.update = function(req, res) {
             }
             else {
                 console.log('success');
+                res.json(contact);
             }
         });
 

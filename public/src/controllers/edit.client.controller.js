@@ -23,16 +23,23 @@ angular
 
 
                $scope.editContact = function() {
-                   $scope.contact =  Contact.get({
-                       id : $routeParams.id}, function(data) {
-                       $scope.contact.firstName = $scope.FirstName;
-                       $scope.contact.lastName = $scope.LastName;
+                   console.log("editctrl-"+$routeParams.id);
+                   $scope.contact =  Contact.get({id : $routeParams.id},
+                    function(data) {
+                        $scope.contact.firstName = $scope.FirstName;
+                        $scope.contact.lastName = $scope.LastName;
+
                        $scope.contact.$update(function(){
                            console.log("contact updated");
-                       })
-                   });
-                   $location.path('/contacts');
-               };
+                       });
+                        $location.url('/contacts');
+
+                    });
+
+                  // Contact.query();
+                   //$location.path('/contacts');
+                   //$location.url('/contacts');
+               }
 
 
                $scope.deleteContact = function() {
@@ -40,6 +47,7 @@ angular
                    Contact.delete({id: $routeParams.id}, function() {
                        console.log("Contact Deleted");
                    });
+                   $location.path('/contacts');
 
                }
 
