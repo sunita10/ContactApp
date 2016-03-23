@@ -9,6 +9,15 @@ angular.module('ContactsApp')
                    controller: 'CreateNewCtrl',
                    templateUrl: 'src/views/create.client.tpl.html'
                })
+               .when('/edit/:id', {
+                   controller: 'EditListCtrl',
+                   templateUrl: 'src/views/edit.client.tpl.html'
+               })
+               .when('/delete/:id', {
+                   controller: 'EditListCtrl',
+                   templateUrl: 'src/views/edit.client.tpl.html'
+               })
+
                .when('/', {
                    template:"<h1>Welcome to MEAN Stack Full Application</h1>"
                })

@@ -13,9 +13,11 @@ angular
             });
 
             newContact.$save(function(response) {
+                    //$scope.newFirstName = "";
+                    //$scope.newLastName = "";
+                console.log(response);
                 $location.path('/contacts');
-                $scope.newFirstName = "";
-                $scope.newLastName = "";
+
             }
             );
         };

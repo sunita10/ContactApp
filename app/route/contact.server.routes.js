@@ -15,6 +15,15 @@ module.exports = function(app) {
     router
         .route('/contact')
         .get(contact.getAllContacts)
-        .post(contact.create);
+        .post(contact.create)
+        .put(contact.update);
+
+    router
+        .route('/contact/:id')
+        .get(contact.edit)
+        .delete(contact.delete);
+
+
+
     app.use('/api', router);
 };

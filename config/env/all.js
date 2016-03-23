@@ -19,7 +19,8 @@ module.exports = {
                 'public/src/config.js',
                 'public/src/services/contact.client.service.js',
                 'public/src/controllers/contact.client.controller.js',
-                'public/src/controllers/create.client.controller.js'
+                'public/src/controllers/create.client.controller.js',
+                'public/src/controllers/edit.client.controller.js'
 
 
             ]
