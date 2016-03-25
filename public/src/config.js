@@ -19,7 +19,7 @@ angular.module('ContactsApp')
                })
 
                .when('/', {
-                   template:"<h1>Welcome to MEAN Stack Full Application</h1>"
+                   template: "<h1>Welcome to MEAN Stack Full Application</h1>"
                })
                .otherwise({
                    redirectTo: '/'

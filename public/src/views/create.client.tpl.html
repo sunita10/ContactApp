@@ -1,11 +1,11 @@
-<form role="form">
+<form role="form" name="addForm" novalidate ng-submit="addContact()">
     <div class="form-group">
         <label for="firstname">FirstName:</label>
-        <input type="text" class="form-control" id="firstname" ng-model="newFirstName">
+        <input type="text" class="form-control" id="firstname" name="firstname" ng-model="contact.firstName">
     </div>
     <div class="form-group">
         <label for="lastname">LastName:</label>
-        <input type="text" class="form-control" id="lastname" ng-model="newLastName">
+        <input type="text" class="form-control" id="lastname" name="lastname" ng-model="contact.lastName">
     </div>
-    <button type="submit" class="btn btn-default" ng-click="addContact()">Save</button>
+    <button type="submit" class="btn btn-default" >Save</button>
 </form>

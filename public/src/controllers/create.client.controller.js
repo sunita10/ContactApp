@@ -7,19 +7,24 @@ angular
     .controller('CreateNewCtrl', ['$scope', '$location', 'Contact', function($scope, $location, Contact) {
 
         $scope.addContact = function() {
-            var newContact = new Contact({
-                firstName: $scope.newFirstName,
-                lastName: $scope.newLastName
-            });
-
-            newContact.$save(function(response) {
-                    //$scope.newFirstName = "";
-                    //$scope.newLastName = "";
-                console.log(response);
-                $location.path('/contacts');
-
-            }
+            //var newContact = new Contact({
+            //    firstName: $scope.newFirstName,
+            //    lastName: $scope.newLastName
+            //});
+            //
+            //newContact.$save(function(response) {
+            //    console.log(response);
+            //    $location.path('/contacts');
+            //}
+            //);
+            console.log($scope.contact.firstName + " "+ $scope.contact.lastName);
+            $scope.contact = new Contact(
+                $scope.contact
             );
+            $scope.contact.$save( function(res) {
+                console.log(res);
+                $location.path('/contacts');
+            });
         };
 
     }]);

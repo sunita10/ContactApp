@@ -7,19 +7,21 @@ var mongoose = require('mongoose'),
 module.exports.getAllContacts = function(req, res){
 
     Contact.find({}, function(err, contacts) {
-        if (err) throw err;
-
+        if (err) {
+            console.log(err);
+            res.send('error');
+        }
         res.json(contacts);
     });
-
-
 };
+
 module.exports.create = function(req, res) {
-    console.log(req.body);
+    console.log("creatCtrlserver-" +req.body.firstName);
     var contact = new Contact(req.body);
+
     contact.save(function(err) {
         if(err) {
-            return res.status(404).send("Error Found");
+            return res.status(500).send("Internal Error");
         }
         else {
             res.json(contact);
@@ -31,23 +33,24 @@ module.exports.edit = function(req, res) {
     console.log(req.params.id);
     var id = req.params.id;
     Contact.findById({_id:id}, function(err, contact) {
-        if(err)  throw err ;
+    //Contact.find({_id:id}, function(err, contact) {
+       // err= {};
+        if(err){
+            console.log(err);
+            res.send(err);
+        }
         console.log(contact);
-        res.send(contact);
-        //var resultContact = _.extend({}, contact);
-        //console.log(resultContact);
-        //
-        //   res.json(resultContact);
-
+        //res.send(contact);
+        var resultContact = _.extend({}, contact);
+        console.log(resultContact);
+        res.json(resultContact);
         //res.json(contact);
-
-
     });
 };
 
 module.exports.update = function(req, res) {
 
-    console.log(req.body);
+    console.log("updateCtrl-"+req.body);
     console.log(req.body._id);
     Contact.findById({_id:req.body._id}, function(err, contact) {
         console.log(contact);
@@ -63,9 +66,7 @@ module.exports.update = function(req, res) {
                 res.json(contact);
             }
         });
-
     });
-
 };
 
 
@@ -78,7 +79,5 @@ module.exports.delete = function(req, res) {
         else {
             res.status('200').send('OK');
         }
-    }
-
-    );
+    });
 };
