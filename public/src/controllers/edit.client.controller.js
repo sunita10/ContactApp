@@ -3,8 +3,8 @@
  */
 angular
        .module('ContactsApp')
-       .controller('EditListCtrl', ['$scope', '$location', 'Contact', 'TempIndex','$routeParams',
-           function($scope,$location,Contact,TempIndex,$routeParams) {
+       .controller('EditListCtrl', ['$scope', '$location', 'Contact','$routeParams',
+           function($scope,$location,Contact,$routeParams) {
                console.log( $routeParams.id);
                $scope.contact = Contact.get({
                    id : $routeParams.id}, function(data) {

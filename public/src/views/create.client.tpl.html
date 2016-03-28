@@ -1,11 +1,14 @@
-<form role="form" name="addForm" novalidate ng-submit="addContact()">
+
+<form role="form" name="addForm" novalidate ng-submit="addContact(addForm.$valid)"> <!-- novalidate for HTML not to validate -->
     <div class="form-group">
         <label for="firstname">FirstName:</label>
-        <input type="text" class="form-control" id="firstname" name="firstname" ng-model="contact.firstName">
+        <input type="text" class="form-control" id="firstname" name="firstname" ng-model="contact.firstName"
+               required ng-minlength="3" ng-maxlength="10">
     </div>
     <div class="form-group">
         <label for="lastname">LastName:</label>
-        <input type="text" class="form-control" id="lastname" name="lastname" ng-model="contact.lastName">
+        <input type="text" class="form-control" id="lastname" name="lastname" ng-model="contact.lastName"
+               required ng-minlength="3" ng-maxlength="10">
     </div>
     <button type="submit" class="btn btn-default" >Save</button>
 </form>

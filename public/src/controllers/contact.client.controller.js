@@ -13,14 +13,16 @@ angular
         //Function for Edit Click Button
         $scope.editContact = function(contactid) {
             console.log(contactid);
-            //var id = contactid;
-            $location.path('/edit/'+contactid);
+            var id = contactid;
+            var editButtonFlag = true;
+            $location.path('/edit/'+id);
         };
 
         $scope.deleteContact = function(contactid) {
             console.log(contactid);
-            //var id = contactid;
-            $location.path('/delete/'+contactid);
+            var id = contactid;
+            var deleteButtonFlag = true;
+            $location.path('/delete/'+id);
         };
     }]);
 
